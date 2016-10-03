@@ -8,6 +8,8 @@ from django.template import RequestContext
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib import auth
+import folium
+
 
 
 @csrf_protect
@@ -29,6 +31,14 @@ def register(request):
 def register_success(request):
     return render_to_response(
     'registration/success.html',
+    )
+
+def mapa(request):
+    print "Mandar Mapa"
+    map_osm = folium.Map(location=[45.5236, -122.6750])
+    map_osm.create_map(path='/home/nemis/pa_proyecto/login/templates/map/osm.html')
+    return render_to_response(
+    'map/osm.html',
     )
  
 def logout_page(request):

@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^register/$', register), 
     url(r'^register/success/$', register_success),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^map/$', mapa), 
 
 ]
